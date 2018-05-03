@@ -31,6 +31,7 @@ objs:
 	@mkdir objs
 
 $(NAME): $(OBJ)
+	@echo "by 😉seng___  ___ ___  _ __  SCOP"
 	make -C libft/ all
 	make -sC ./minilibx_macos/ all
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBS) minilibx_macos/mlx_opengl.m

@@ -124,7 +124,7 @@ $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@mkdir $(OBJ_PATH)/libft 2> /dev/null || true
 	@mkdir $(OBJ_PATH)/libftprintf 2> /dev/null || true
-	$(CC) $(CFLAGS) $(CPFLAGS) -o $@ -c $<
+	@$(CC) $(CFLAGS) $(CPFLAGS) -o $@ -c $<
 
 clean:
 	rm -rf $(OBJ)
