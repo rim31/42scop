@@ -66,7 +66,8 @@ void	ft_start_screen(t_env a)
 	if (a.x > L || a.x < 0 || a.y > H || a.y < 0 || H < 1 || L < 1)
 		exit(0);
 	a.mlx = mlx_init();
-	a.win = mlx_new_window(a.mlx, L, H, "mlx 42");
+	// a.win = mlx_new_window(a.mlx, L, H, "mlx 42");
+	a.win = mlx_new_opengl_window(a.mlx, L, H, "mlx scop42");
 	a.image = mlx_new_image(a.mlx, L, H);
 	mlx_hook(a.win, 2, (1L << 0), my_key_funct, &a);
 	mlx_hook(a.win, 3, (1L << 1), my_keyrelease_funct, &a);
@@ -90,6 +91,7 @@ int				main(int argc, char **argv)
 		while ((get_next_line(fd, &buff)) > 0)
 		{
 			ft_putendl(buff);
+
 		}
 		close(fd);
 		*a = ft_init(a);

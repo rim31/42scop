@@ -18,6 +18,8 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include "../minilibx_macos/mlx.h"
+# include "../minilibx_macos/mlx_opengl.h"
+# include <openGL/gl3.h>
 # include <fcntl.h>
 # include <math.h>
 # include <stdio.h>
@@ -46,6 +48,7 @@ typedef struct	s_obj
 
 typedef struct	s_env
 {
+  char**  obj;
 	void		*mlx;
 	void		*win;
 	void		*image;
@@ -80,6 +83,33 @@ typedef struct	s_env
 	t_obj		*cone;
 	t_vect		*lum;
 }				         t_env;
+
+struct      s_object
+{
+	int        face_count;
+	int        vertices_count;
+	char		 *name;
+	float		 **vertices;
+	float		 *colors;
+	float		 *points;
+	float 	 *uv_map;
+	int			 **faces;
+	int			 shading;
+	double	 rotation_y;
+	char		 *texture;
+	int 		 transition_state;
+	float		 transition_value;
+	GLfloat		*projection_matrix;
+	GLfloat		*translation_matrix;
+	GLfloat		*scale_matrix;
+	GLfloat		*rotation_matrix;
+	GLfloat		*view_matrix;
+	GLuint		vbo;
+	GLuint		vbo_colors;
+	GLuint		vbo_uvs;
+	t_vector	position;
+}           t_object;
+
 
 // # include "mlx_macros.h"
 // # include <mlx.h>
