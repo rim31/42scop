@@ -14,7 +14,72 @@
 # define SCOP_H
 
 # include "libft.h"
+# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include "../minilibx_macos/mlx.h"
+# include <fcntl.h>
+# include <math.h>
+# include <stdio.h>
+# define H 1000
+# define L 1000
+# define RGB(r, g, b)(256 * 256 * (int)(r) + 256 * (int)(g) + (int)(b))
 
+typedef struct	s_vect
+{
+	double		x;
+	double		y;
+	double		z;
+}				        t_vect;
+
+typedef struct	s_obj
+{
+	char		*name;
+	t_vect		center;
+	t_vect		normale;
+	t_vect		angle;
+	double		d;
+	t_vect		color;
+	double		rayon;
+	double		hauteur;
+}				        t_obj;
+
+typedef struct	s_env
+{
+	void		*mlx;
+	void		*win;
+	void		*image;
+	char		*data;
+	int			color;
+	int			bpp;
+	int			size_line;
+	int			endian;
+	int			nbobjet;
+	int			nblum;
+	double		k;
+	double		k0;
+	double		cos_lum;
+	int			x;
+	int			y;
+	int			xx;
+	int			yy;
+	int			keyup;
+	int			keydown;
+	int			keyleft;
+	int			keyrigth;
+	int			pas;
+	t_vect		kk;
+	t_vect		pt;
+	t_vect		cam;
+	t_vect		angle;
+	t_vect		ray;
+	t_obj		*obj;
+	t_obj		*sphere;
+	t_obj		*plan;
+	t_obj		*cylind;
+	t_obj		*cone;
+	t_vect		*lum;
+}				         t_env;
 
 // # include "mlx_macros.h"
 // # include <mlx.h>
