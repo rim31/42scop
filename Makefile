@@ -10,18 +10,15 @@
 #                                                                              #
 # **************************************************************************** #
 
+# https://en.wikibooks.org/wiki/OpenGL_Programming/Modern_OpenGL_Tutorial_Load_OBJ
+# http://www.opengl-tutorial.org/fr/beginners-tutorials/tutorial-7-model-loading/
+
 NAME 		= scop
-CC 	 		= clang -Wall -Wextra -Werror
-
-
+CC 	 		= gcc -Wall -Wextra -Werror
 LIBS		= -L libft/ -lft -L minilibx_macos/ -lmlx -framework OpenGL -framework AppKit
-
 SRC  		= main.c \
 
-
 OBJ  		= $(SRC:%.c=objs/%.o)
-
-
 SRC_DIR 	= ./srcs/
 INCLUDE_DIR = -I ./incs/ -I libft/includes -I minilibx_macos/
 
@@ -34,10 +31,10 @@ $(NAME): $(OBJ)
 	@echo "by 😉seng___  ___ ___  _ __  SCOP"
 	make -C libft/ all
 	make -sC ./minilibx_macos/ all
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBS) minilibx_macos/mlx_opengl.m
+	$(CC) -o $(NAME) $(OBJ) $(LIBS) minilibx_macos/mlx_opengl.m
 
 objs/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) $(INCLUDE_DIR) -o $@ -c $<
+	$(CC) $(INCLUDE_DIR) -o $@ -c $<
 
 clean:
 	rm -rf objs

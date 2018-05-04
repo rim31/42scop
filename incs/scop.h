@@ -48,7 +48,7 @@ typedef struct	s_obj
 
 typedef struct	s_env
 {
-  char**  obj;
+  char**  buff;
 	void		*mlx;
 	void		*win;
 	void		*image;
@@ -107,7 +107,7 @@ struct      s_object
 	GLuint		vbo;
 	GLuint		vbo_colors;
 	GLuint		vbo_uvs;
-	t_vector	position;
+	t_vect	position;
 }           t_object;
 
 
