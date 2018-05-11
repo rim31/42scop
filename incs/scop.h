@@ -64,13 +64,16 @@ typedef struct	s_env
 	double		cos_lum;
 	int			x;
 	int			y;
+	int 		z;
 	int			xx;
 	int			yy;
+	int			zz;
 	int			keyup;
 	int			keydown;
 	int			keyleft;
 	int			keyrigth;
 	int			pas;
+	t_vect		vect;
 	t_vect		kk;
 	t_vect		pt;
 	t_vect		cam;
